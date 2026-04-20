@@ -55,6 +55,12 @@ function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
 
+document.getElementById("modal").addEventListener("click", function(e) {
+    if (e.target.id === "modal") {
+        closeModal();
+    }
+});
+
 let currentIndex = 0;
 let images;
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chem</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hearts-container"></div>
+
+<section class="hero">
+    <h1>Chemisaurus 💖</h1>
+    <p>You will always be my favorite girl 💖</p>
+</section>
+
+<section>
+    <h2>Time Together ⏳</h2>
+    <div class="timer">
+        <div class="time-box"><span id="years"></span><br>Years</div>
+        <div class="time-box"><span id="months"></span><br>Months</div>
+        <div class="time-box"><span id="days"></span><br>Days</div>
+        <div class="time-box"><span id="hours"></span><br>Hours</div>
+        <div class="time-box"><span id="minutes"></span><br>Minutes</div>
+        <div class="time-box"><span id="seconds"></span><br>Seconds</div>
+    </div>
+</section>
+
+<section>
+    <h2>My Album About You 📸</h2>
+    <div class="gallery">
+        <div class="polaroid" onclick="openImage(this)">
+            <img src="images/Photo2.jpg">
+            <p>03-02-2026 💖</p>
+        </div>
+        <div class="polaroid" onclick="openImage(this)">
+            <img src="images/Photo1.jpg">
+            <p>03-24-2026 💖</p>
+        </div>
+        <div class="polaroid" onclick="openImage(this)">
+            <img src="images/Photo3.jpg">
+            <p>04-18-2026 💖</p>
+        </div>
+        <div class="polaroid" onclick="openImage(this)">
+            <img src="images/Photo4.jpg">
+            <p>04-19-2026 💖</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Things I Love About You 💖</h2>
+    <ul class="love-list">
+        <li>Your laugh</li>
+        <li>The way you care too much</li>
+        <li>How you stay even when I'm annoying</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Open When 💌</h2>
+    <div class="btn-group">
+        <button onclick="openLetter('sad')">When you're sad</button>
+        <button onclick="openLetter('miss')">When you miss me</button>
+        <button onclick="openLetter('overthinking')">When you're overthinking</button>
+    </div>
+</section>
+
+<div id="image-viewer" class="image-viewer">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <button class="nav prev" onclick="changeImage(-1)">❮</button>
+    <img id="viewer-img">
+    <button class="nav next" onclick="changeImage(1)">❯</button>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="letter-text"></p>
+    </div>
+</div>
+
+<audio id="music" loop autoplay>
+    <source src="Song.mp3">
+</audio>
+
+<section>
+    <h2>For You 💖</h2>
+    <p id="final-text"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

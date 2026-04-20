@@ -1,5 +1,22 @@
 const startDate = new Date("2026-02-06");
 
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => {
+    sec.style.opacity = 0;
+    sec.style.transform = "translateY(50px)";
+    observer.observe(sec);
+});
+
 function updateTimer() {
     const now = new Date();
     let diff = now - startDate;
@@ -23,11 +40,11 @@ function openLetter(type) {
     let text = "";
 
     if(type === "sad") {
-        text = text = "Don't feel too sad i'm always here for you ❤️";
+        text = "Don't feel too sad i'm always here for you ❤️";
     } else if (type === "miss") {
-        text = "I miss you too more than words i can explain 💖";
+        text = "I miss you more than words can explain 💖";
     } else {
-        text = "You don't need to overthink too much no need to be afraid of losing me 💖";
+        text = "You don't need to overthink, I'm not going anywhere 💖";
     }
 
     document.getElementById("letter-text").innerText = text;
@@ -40,6 +57,7 @@ function closeModal() {
 
 let currentIndex = 0;
 let images;
+
 window.onload = () => {
     images = document.querySelectorAll(".polaroid img");
 };
@@ -84,9 +102,7 @@ function changeImage(direction) {
 }
 
 document.getElementById("image-viewer").addEventListener("click", function(e) {
-    if (e.target.id === "image-viewer") {
-        closeImage();
-    }
+    if (e.target.id === "image-viewer") closeImage();
 });
 
 document.addEventListener("keydown", (e) => {
@@ -102,20 +118,22 @@ function createHeart() {
     heart.classList.add("heart");
     heart.innerText = "❤️";
     heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 10 + 10 + "px";
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 6000);
 }
-setInterval(createHeart, 400);
+setInterval(createHeart, 300);
 
 const text = "You are my peace, my safe place. It feels comfortable when talking to you, the most beautiful part that has come to my life. I know you care for me a little bit too much because of my childish side, but aside from that, you still love me. That's the most loving part of you because you accept me for who I am. 💖";
+
 let i = 0;
 
 function typeWriter() {
     if (i < text.length) {
         document.getElementById("final-text").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 40);
+        setTimeout(typeWriter, 35);
     }
 }
 typeWriter();

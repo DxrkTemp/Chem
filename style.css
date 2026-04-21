@@ -4,11 +4,35 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to bottom, #14000a, #000);
     color: #ffd6e0;
     text-align: center;
     overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: #ff4d88;
+}
+
+.hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #ff4d88, #ff99cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 25px;
 }
 
 body::before {
@@ -67,23 +91,6 @@ section:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-h1, h2 {
-    color: #ff4d88;
-}
-
-.hero {
-    padding-top: 120px;
-    padding-bottom: 100px;
-}
-
-.hero h1 {
-    font-size: 60px;
-    background: linear-gradient(45deg, #ff4d88, #ff99cc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: glowText 2s infinite alternate;
 }
 
 @keyframes glowText {

@@ -50,6 +50,34 @@
 </section>
 
 <section>
+    <h2>My Videos About You 🎥</h2>
+    <div class="video-gallery">
+        <div class="video-card" onclick="openVideo(this)">
+            <video src="Videos/Chem1.mp4" muted preload="metadata"></video>
+        </div>
+        <div class="video-card" onclick="openVideo(this)">
+            <video src="Videos/Chem2.mp4" muted preload="metadata"></video>
+        </div>
+        <div class="video-card" onclick="openVideo(this)">
+            <video src="Videos/Chem4.mp4" muted preload="metadata"></video>
+        </div>
+    </div>
+</section>
+
+<div id="video-viewer" class="image-viewer">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <button class="nav prev" onclick="changeVideo(-1)">❮</button>
+
+    <div class="carousel">
+        <video id="prev-video" class="side left" muted></video>
+        <video id="current-video" class="main" autoplay muted playsinline></video>
+        <video id="next-video" class="side right" muted></video>
+    </div>
+
+    <button class="nav next" onclick="changeVideo(1)">❯</button>
+</div>
+
+<section>
     <h2>Things I Love About You 💖</h2>
     <ul class="love-list">
         <li>Your laugh</li>
@@ -71,7 +99,11 @@
 <div id="image-viewer" class="image-viewer">
     <span class="close" onclick="closeImage()">&times;</span>
     <button class="nav prev" onclick="changeImage(-1)">❮</button>
-    <img id="viewer-img">
+    <div class="carousel">
+        <img id="prev-img" class="side left">
+        <img id="current-img" class="main">
+        <img id="next-img" class="side right">
+    </div>
     <button class="nav next" onclick="changeImage(1)">❯</button>
 </div>
 
